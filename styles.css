@@ -4,6 +4,9 @@ body{
     color: #000;
     background-color: #fff;
 }
+img{
+    max-width: 400px;
+}
 header{
     background-color: #4a5f70;
     text-align: center;
@@ -37,6 +40,17 @@ a:hover{
     padding: 1rem;
     color: #fff;
 }
+.gallery1{
+    text-align: center;
+    font-size: large;
+}
+.gallery1>div{
+    border: #eeeee1;
+    border-style: solid;
+    border-width: 0.2rem;
+    margin: 0.3rem;
+    padding: 1rem;
+}
 .contact{
     background-color: #eeeee1;
     margin: 1rem 0;
@@ -45,7 +59,10 @@ a:hover{
 .contact>h1{
     color: #4a5f70;
 }
-@media (min-width: 850px){
+@media (min-width: 900px){
+    .gallery>img{
+        max-width: fit-content;
+    }
     header{
         text-align: left;
         position: relative;
@@ -60,8 +77,9 @@ a:hover{
     }
     .aboutme{
         display: grid;
-        grid-template-columns: auto 50%;
-        grid-template-rows: 25% auto;
+        grid-template-columns: auto 40%;
+        grid-template-rows: 15% auto;
+        gap: 2rem;
     }
     .aboutme>h1{
         grid-area: 1/1/2/2;
@@ -73,9 +91,14 @@ a:hover{
         grid-area: 1/2/3/3;
     }
     .gallery1{
-        display: flex;
+        display: grid;
+        grid-template-columns: 50% auto;
+        grid-template-rows: 33% 33% auto;
     }
-    .two, .four, .six{
-        display: block;
-    }    
+}
+@media (min-width: 1400px){
+    .gallery1{
+        grid-template-columns: 33% 33% auto;
+        grid-template-rows: 50% auto;
+    }
 }
